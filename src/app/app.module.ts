@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { Appproduct } from './test/product.component';
 import { AppInventory } from './test/inventory.component';
-import { PageNotFoundComponent } from  './test/NotFound.component' 
+import { PageNotFoundComponent } from  './test/NotFound.component';
 
 import { FormsModule } from '@angular/forms';
 import { ProductFormComponent } from './test/product-form.component';
@@ -14,17 +14,19 @@ import { ProductFormComponent } from './test/product-form.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MyDatePickerModule } from 'mydatepicker';
-import { Ng2SmartTableModule } from 'ng2-smart-table'
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 // from my app
-import { EventbooksComponent } from './views/eventbooks.component'
-import { GroupsComponent } from './views/groups.component'
+import { EventbooksComponent } from './views/eventbooks.component';
+import { GroupsComponent } from './views/groups.component';
+import { EventsComponent } from './views/events.component';
+import { LoginComponent } from './views/login.component';
 
 
 const appRoutes: Routes = [
   { 
     path: '', 
-    component: Appproduct,
+    component: LoginComponent,
   },
   { 
     path: 'groups', 
@@ -35,8 +37,8 @@ const appRoutes: Routes = [
     component: EventbooksComponent 
   },
   { 
-    path: 'details', 
-    component: AppInventory 
+    path: 'events', 
+    component: EventsComponent 
   },
   { 
     path: '**', 
@@ -52,7 +54,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes), 
     FormsModule, 
     MyDatePickerModule, 
-    Ng2SmartTableModule 
+    Ng2SmartTableModule
   ],
   declarations: [ 
     AppComponent, 
@@ -63,7 +65,9 @@ const appRoutes: Routes = [
     ProductFormComponent,
 
     EventbooksComponent,
-    GroupsComponent
+    GroupsComponent,
+    EventsComponent,
+    LoginComponent
   ],
   bootstrap:    [ AppComponent ]
 })

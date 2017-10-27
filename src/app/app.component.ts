@@ -7,9 +7,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import {
-  appService
-} from './test/get-app.service';
+import {appService} from './test/get-app.service';
 
 import {IMyDpOptions} from 'mydatepicker';
 
@@ -34,24 +32,14 @@ export class AppComponent {
     "name": "Eventbooks",
     "url": "/eventbooks"
   }, {
-    "name": "Details",
-    "url": "/details"
+    "name": "Group events",
+    "url": "/events"
   }];
 
   iproducts: IProduct[];
   constructor(private _product: ProductService,
     private _appService: appService) {
   }
-
-
-  public myDatePickerOptions: IMyDpOptions = {
-      // other options...
-      dateFormat: 'dd.mm.yyyy',
-  };
-
-   // Initialized to specific date (09.10.2018).
-   public myDatepicker: any = { date: { year: 2018, month: 10, day: 9 } };
-
 
   ngOnInit(): void {
     this._product.getproducts()

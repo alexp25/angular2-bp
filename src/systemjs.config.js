@@ -35,7 +35,7 @@
       'ng2-completer': 'npm:ng2-completer',
       'lodash': 'npm:lodash',
       //ng2-smart-table
-      'ng2-smart-table': 'npm:ng2-smart-table',
+      'ng2-smart-table': 'npm:ng2-smart-table'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

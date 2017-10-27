@@ -29,15 +29,9 @@ var AppComponent = (function () {
                 "name": "Eventbooks",
                 "url": "/eventbooks"
             }, {
-                "name": "Details",
-                "url": "/details"
+                "name": "Group events",
+                "url": "/events"
             }];
-        this.myDatePickerOptions = {
-            // other options...
-            dateFormat: 'dd.mm.yyyy',
-        };
-        // Initialized to specific date (09.10.2018).
-        this.myDatepicker = { date: { year: 2018, month: 10, day: 9 } };
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;

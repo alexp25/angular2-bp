@@ -20,10 +20,12 @@ var ng2_smart_table_1 = require("ng2-smart-table");
 // from my app
 var eventbooks_component_1 = require("./views/eventbooks.component");
 var groups_component_1 = require("./views/groups.component");
+var events_component_1 = require("./views/events.component");
+var login_component_1 = require("./views/login.component");
 var appRoutes = [
     {
         path: '',
-        component: product_component_1.Appproduct,
+        component: login_component_1.LoginComponent,
     },
     {
         path: 'groups',
@@ -34,8 +36,8 @@ var appRoutes = [
         component: eventbooks_component_1.EventbooksComponent
     },
     {
-        path: 'details',
-        component: inventory_component_1.AppInventory
+        path: 'events',
+        component: events_component_1.EventsComponent
     },
     {
         path: '**',
@@ -64,7 +66,9 @@ AppModule = __decorate([
             NotFound_component_1.PageNotFoundComponent,
             product_form_component_1.ProductFormComponent,
             eventbooks_component_1.EventbooksComponent,
-            groups_component_1.GroupsComponent
+            groups_component_1.GroupsComponent,
+            events_component_1.EventsComponent,
+            login_component_1.LoginComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     })
