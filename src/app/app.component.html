@@ -1,0 +1,22 @@
+<h1>{{appTitle}}</h1>
+<div>Hello {{name}}</div>
+<div>{{value}}</div>
+<div *ngIf='appStatus'>show if true</div>
+<div *ngFor='let lst of appList'>
+    <ul>
+        <li>{{lst.ID}}. {{lst.Name}}</li>
+        <img [src]='lst.url' width="100">
+    </ul>
+</div>
+
+<ul>
+    <li>
+        <a [routerLink]="['/Product']">Product</a>
+    </li>
+    <li>
+        <a [routerLink]="['/Inventory']">Inventory</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
+
+<product-form></product-form>
