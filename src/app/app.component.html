@@ -1,22 +1,22 @@
-<h1>{{appTitle}}</h1>
+<h1>Eventbooks</h1>
 <div>Hello {{name}}</div>
-<div>{{value}}</div>
-<div *ngIf='appStatus'>show if true</div>
-<div *ngFor='let lst of appList'>
-    <ul>
-        <li>{{lst.ID}}. {{lst.Name}}</li>
-        <img [src]='lst.url' width="100">
-    </ul>
-</div>
+
+<div *ngIf='appStatus'>Online</div>
 
 <ul>
-    <li>
-        <a [routerLink]="['/Product']">Product</a>
-    </li>
-    <li>
-        <a [routerLink]="['/Inventory']">Inventory</a>
+    <li *ngFor="let r of routes">
+        <a [routerLink]="r.url">{{r.name}}</a>
     </li>
 </ul>
+
+
+<form #myForm="ngForm" novalidate>
+    <my-date-picker name="mydate" [options]="myDatePickerOptions"
+                    [(ngModel)]="myDatepicker" required></my-date-picker>
+</form>
+
 <router-outlet></router-outlet>
 
+
+<div>directive example</div>
 <product-form></product-form>

@@ -17,7 +17,7 @@ require("rxjs/add/operator/catch");
 var ProductService = (function () {
     function ProductService(_http) {
         this._http = _http;
-        this._producturl = 'app/products.json';
+        this._producturl = 'app/resources/products.json';
     }
     ProductService.prototype.getproducts = function () {
         return this._http.get(this._producturl)

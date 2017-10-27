@@ -9,7 +9,7 @@ import { IProduct } from './products';
 
 @Injectable()
 export class ProductService {
-    private _producturl = 'app/products.json';
+    private _producturl = 'app/resources/products.json';
     constructor(private _http: Http) { }
 
     getproducts(): Observable<IProduct[]> {

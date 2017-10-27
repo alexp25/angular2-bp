@@ -9,27 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var products_service_1 = require("./products.service");
+var products_service_1 = require("./test/products.service");
 require("rxjs/add/operator/map");
-var get_app_service_1 = require("./get-app.service");
+var get_app_service_1 = require("./test/get-app.service");
 var AppComponent = (function () {
     function AppComponent(_product, _appService) {
         this._product = _product;
         this._appService = _appService;
-        this.name = 'World';
+        this.name = "Alex";
         this.value = "";
-        this.appTitle = 'Welcome';
         this.appStatus = true;
-        this.appList = [{
-                "ID": "1",
-                "Name": "One",
-                "url": 'app/Images/One.png'
-            },
-            {
-                "ID": "2",
-                "Name": "Two",
-                "url": 'app/Images/Two.png'
+        this.routes = [{
+                "name": "Home",
+                "url": "/"
+            }, {
+                "name": "Groups",
+                "url": "/groups"
+            }, {
+                "name": "Eventbooks",
+                "url": "/eventbooks"
+            }, {
+                "name": "Details",
+                "url": "/details"
             }];
+        this.myDatePickerOptions = {
+            // other options...
+            dateFormat: 'dd.mm.yyyy',
+        };
+        // Initialized to specific date (09.10.2018).
+        this.myDatepicker = { date: { year: 2018, month: 10, day: 9 } };
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;

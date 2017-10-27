@@ -1,0 +1,10 @@
+<div class="container">
+    <h2>Groups manager</h2>
+    <div> Here are your groups. You can create new groups and add people </div>
+    <ul>
+        <li *ngFor="let e of groups">
+            {{e.title}}
+        </li>
+        <ng2-smart-table *ngIf="!this.loading" [settings]="settings" [source]="groupData"></ng2-smart-table>
+    </ul>
+</div>

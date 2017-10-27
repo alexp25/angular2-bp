@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>Event books</h2>
+    <div> Here are your event books. You can create an event book for every one of your groups </div>
+    <ul>
+
+        <li *ngFor="let e of events">
+            {{e.name}}
+        </li>
+        
+        <ng2-smart-table *ngIf="!this.loading" [settings]="settings" [source]="data"></ng2-smart-table>
+    </ul>
+</div>
