@@ -16,6 +16,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { MyDatePickerModule } from 'mydatepicker';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
+import { NgClass } from '@angular/common';
+
 // from my app
 import { EventbooksComponent } from './views/eventbooks.component';
 import { GroupsComponent } from './views/groups.component';

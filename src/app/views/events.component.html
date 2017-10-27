@@ -1,3 +1,8 @@
 <form #myForm="ngForm" novalidate>
+    <ul>
+        <li *ngFor="let e of events">
+            {{e.name}}
+        </li>
+    </ul>
     <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="myDatepicker" required></my-date-picker>
 </form>

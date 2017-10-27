@@ -14,6 +14,7 @@ var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/catch");
+require("rxjs/add/operator/timeout");
 var DataService = (function () {
     function DataService(_http) {
         this._http = _http;
@@ -26,6 +27,12 @@ var DataService = (function () {
     };
     DataService.prototype.getGroups = function () {
         return this._http.get('app/resources/groups.json')
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log(data); })
+            .catch(this.handleError);
+    };
+    DataService.prototype.getPeopleFromGroup = function (groupName) {
+        return this._http.get('app/resources/people.json')
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log(data); })
             .catch(this.handleError);

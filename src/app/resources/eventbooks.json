@@ -1,10 +1,20 @@
 [{
     "id": 1,
     "title": "Jam sessions",
-    "group": "BP"
+    "group": "Band project"
 },
 {
     "id": 2,
+    "title": "Live sessions",
+    "group": "Band project"
+},
+{
+    "id": 3,
+    "title": "Recordings",
+    "group": "Band project"
+},
+{
+    "id": 1,
     "name": "Project meetings",
-    "group": "WORK"
+    "group": "Work group"
 }]

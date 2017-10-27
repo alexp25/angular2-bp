@@ -25,21 +25,28 @@ export class GroupsComponent {
       },
       username: {
         title: 'Username'
-      },
-      email: {
-        title: 'Email',
       }
     }
   };
 
+  showGroup(gname: string): void {
+    console.log(gname);
+    this._dataservice.getPeopleFromGroup(gname)
+    .subscribe(data => {
+      this.groupData = data;
+    });
+  }
+
 
   ngOnInit(): void {
-    this._dataservice.getGroups()
+
+    setTimeout(() => this._dataservice.getGroups()
       .subscribe(data => {
         // this.groupData = data;
         this.groups = data;
         this.loading = false;
-      });
+      }), 1000);
+
   }
 
 }

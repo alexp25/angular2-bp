@@ -4,7 +4,8 @@ import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch'; 
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/timeout';
 
 @Injectable()
 export class DataService {
@@ -15,19 +16,30 @@ export class DataService {
             .map((response: Response) => <any[]>response.json())
             // .do(data => console.log(JSON.stringify(data)))
             .do(data => console.log(data))
-            .catch(this.handleError); 
+            .catch(this.handleError);
     }
 
     getGroups(): Observable<any[]> {
         return this._http.get('app/resources/groups.json')
+            // .timeout(2000)
             .map((response: Response) => <any[]>response.json())
             // .do(data => console.log(JSON.stringify(data)))
             .do(data => console.log(data))
-            .catch(this.handleError); 
+            .catch(this.handleError);
+
     }
 
-    private handleError(error: Response) { 
-        console.error(error); 
-        return Observable.throw(error.json().error()); 
-     } 
+    getPeopleFromGroup(groupName: string): Observable<any[]> {
+        return this._http.get('app/resources/people.json')
+            // .timeout(2000)
+            .map((response: Response) => <any[]>response.json())
+            // .do(data => console.log(JSON.stringify(data)))
+            .do(data => console.log(data))
+            .catch(this.handleError);
+    }
+
+    private handleError(error: Response) {
+        console.error(error);
+        return Observable.throw(error.json().error());
+    }
 }

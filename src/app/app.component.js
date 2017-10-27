@@ -12,29 +12,56 @@ var core_1 = require("@angular/core");
 var products_service_1 = require("./test/products.service");
 require("rxjs/add/operator/map");
 var get_app_service_1 = require("./test/get-app.service");
+var platform_browser_1 = require("@angular/platform-browser");
+var router_1 = require("@angular/router");
 var AppComponent = (function () {
-    function AppComponent(_product, _appService) {
+    function AppComponent(_product, _appService, router, titleService, activatedRoute) {
         this._product = _product;
         this._appService = _appService;
+        this.router = router;
+        this.titleService = titleService;
+        this.activatedRoute = activatedRoute;
         this.name = "Alex";
         this.value = "";
         this.appStatus = true;
         this.routes = [{
                 "name": "Home",
-                "url": "/"
+                "url": "/",
+                "active": false
             }, {
                 "name": "Groups",
-                "url": "/groups"
+                "url": "/groups",
+                "active": false
             }, {
                 "name": "Eventbooks",
-                "url": "/eventbooks"
+                "url": "/eventbooks",
+                "active": false
             }, {
                 "name": "Group events",
-                "url": "/events"
+                "url": "/events",
+                "active": false
             }];
     }
+    AppComponent.prototype.selectTabFromUrl = function (url) {
+        this.routes.forEach(function (element) {
+            if (element.url === url) {
+                element.active = true;
+            }
+            else {
+                element.active = false;
+            }
+        });
+    };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.router.events
+            .subscribe(function (event) {
+            //console.log(event);
+            if (event instanceof router_1.NavigationEnd) {
+                console.log(event.url);
+                _this.selectTabFromUrl(event.url);
+            }
+        });
         this._product.getproducts()
             .subscribe(function (iproducts) { return _this.iproducts = iproducts; });
         this.value = this._appService.getApp();
@@ -48,7 +75,10 @@ AppComponent = __decorate([
         providers: [products_service_1.ProductService, get_app_service_1.appService]
     }),
     __metadata("design:paramtypes", [products_service_1.ProductService,
-        get_app_service_1.appService])
+        get_app_service_1.appService,
+        router_1.Router,
+        platform_browser_1.Title,
+        router_1.ActivatedRoute])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

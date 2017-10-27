@@ -23,21 +23,26 @@ var GroupsComponent = (function () {
                 },
                 username: {
                     title: 'Username'
-                },
-                email: {
-                    title: 'Email',
                 }
             }
         };
     }
+    GroupsComponent.prototype.showGroup = function (gname) {
+        var _this = this;
+        console.log(gname);
+        this._dataservice.getPeopleFromGroup(gname)
+            .subscribe(function (data) {
+            _this.groupData = data;
+        });
+    };
     GroupsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._dataservice.getGroups()
+        setTimeout(function () { return _this._dataservice.getGroups()
             .subscribe(function (data) {
             // this.groupData = data;
             _this.groups = data;
             _this.loading = false;
-        });
+        }); }, 1000);
     };
     return GroupsComponent;
 }());
