@@ -4,6 +4,8 @@ h1 {
   font-size: 250%;
 }
 
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
 div.content {
   margin-left: 25%;
   padding: 1px 16px;

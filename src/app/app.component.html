@@ -1,10 +1,10 @@
 <div>
     <h1>Eventbook</h1>
-    <ul class="sidenav">
+    <!-- <ul class="sidenav">
         <li *ngFor="let r of routes">
             <a [routerLink]="r.url" [ngClass]="{'active': r.active}">{{r.name}}</a>
         </li>
-    </ul>
+    </ul> -->
 </div>
 
 
@@ -12,6 +12,18 @@
     <mat-sidenav mode="side" opened="true">Drawer content</mat-sidenav>
     <div class="my-content">Main content</div>
 </mat-sidenav-container> -->
+
+<!-- <mat-tab-group> -->
+<!-- <mat-tab *ngFor="let r of routes" label="{{r.name}}">
+        <a [routerLink]="r.url">{{r.name}}</a>
+    </mat-tab> -->
+<!-- </mat-tab-group> -->
+<nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let r of routes" [routerLink]="r.url" routerLinkActive #rla="routerLinkActive" [active]="r.active">
+        {{r.name}}
+    </a>
+</nav>
+
 
 <router-outlet></router-outlet>
 

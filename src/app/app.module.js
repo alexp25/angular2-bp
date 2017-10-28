@@ -17,6 +17,8 @@ var product_form_component_1 = require("./test/product-form.component");
 var router_1 = require("@angular/router");
 var mydatepicker_1 = require("mydatepicker");
 var ng2_smart_table_1 = require("ng2-smart-table");
+var animations_1 = require("@angular/platform-browser/animations");
+var material_module_1 = require("./material.module");
 // from my app
 var eventbooks_component_1 = require("./views/eventbooks.component");
 var groups_component_1 = require("./views/groups.component");
@@ -57,7 +59,10 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot(appRoutes),
             forms_1.FormsModule,
             mydatepicker_1.MyDatePickerModule,
-            ng2_smart_table_1.Ng2SmartTableModule
+            ng2_smart_table_1.Ng2SmartTableModule,
+            animations_1.BrowserAnimationsModule,
+            animations_1.NoopAnimationsModule,
+            material_module_1.MyOwnCustomMaterialModule
         ],
         declarations: [
             app_component_1.AppComponent,
