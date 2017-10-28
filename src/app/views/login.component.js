@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("../services/data.service");
-var LoginComponent = (function () {
+var LoginComponent = /** @class */ (function () {
     function LoginComponent(_dataservice) {
         this._dataservice = _dataservice;
         this.loading = true;
@@ -24,15 +25,15 @@ var LoginComponent = (function () {
             _this.loading = false;
         });
     };
+    LoginComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            templateUrl: './login.component.html',
+            providers: [data_service_1.DataService]
+        }),
+        __metadata("design:paramtypes", [data_service_1.DataService])
+    ], LoginComponent);
     return LoginComponent;
 }());
-LoginComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: './login.component.html',
-        providers: [data_service_1.DataService]
-    }),
-    __metadata("design:paramtypes", [data_service_1.DataService])
-], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

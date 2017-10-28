@@ -8,23 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var AppInventory = (function () {
+var AppInventory = /** @class */ (function () {
     function AppInventory(_router) {
         this._router = _router;
     }
     AppInventory.prototype.onBack = function () {
         this._router.navigate(['/Product']);
     };
+    AppInventory = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            template: "Inventory\n    <a class = \"button\" (click) = \"onBack()\">Back to Products</a>"
+        }),
+        __metadata("design:paramtypes", [router_1.Router])
+    ], AppInventory);
     return AppInventory;
 }());
-AppInventory = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "Inventory\n    <a class = \"button\" (click) = \"onBack()\">Back to Products</a>"
-    }),
-    __metadata("design:paramtypes", [router_1.Router])
-], AppInventory);
 exports.AppInventory = AppInventory;
 //# sourceMappingURL=inventory.component.js.map

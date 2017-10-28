@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("../services/data.service");
-var EventbooksComponent = (function () {
+var EventbooksComponent = /** @class */ (function () {
     function EventbooksComponent(_dataservice) {
         this._dataservice = _dataservice;
         this.counter = 0;
@@ -59,15 +60,15 @@ var EventbooksComponent = (function () {
             .subscribe(function (data) { return _this.data = data; });
         // this.value = this._appService.getApp();
     };
+    EventbooksComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            templateUrl: './eventbooks.component.html',
+            providers: [data_service_1.DataService]
+        }),
+        __metadata("design:paramtypes", [data_service_1.DataService])
+    ], EventbooksComponent);
     return EventbooksComponent;
 }());
-EventbooksComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: './eventbooks.component.html',
-        providers: [data_service_1.DataService]
-    }),
-    __metadata("design:paramtypes", [data_service_1.DataService])
-], EventbooksComponent);
 exports.EventbooksComponent = EventbooksComponent;
 //# sourceMappingURL=eventbooks.component.js.map

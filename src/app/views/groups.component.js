@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("../services/data.service");
-var GroupsComponent = (function () {
+var GroupsComponent = /** @class */ (function () {
     function GroupsComponent(_dataservice) {
         this._dataservice = _dataservice;
         this.loading = true;
@@ -44,15 +45,15 @@ var GroupsComponent = (function () {
             _this.loading = false;
         }); }, 1000);
     };
+    GroupsComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            templateUrl: './groups.component.html',
+            providers: [data_service_1.DataService]
+        }),
+        __metadata("design:paramtypes", [data_service_1.DataService])
+    ], GroupsComponent);
     return GroupsComponent;
 }());
-GroupsComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: './groups.component.html',
-        providers: [data_service_1.DataService]
-    }),
-    __metadata("design:paramtypes", [data_service_1.DataService])
-], GroupsComponent);
 exports.GroupsComponent = GroupsComponent;
 //# sourceMappingURL=groups.component.js.map

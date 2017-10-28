@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("../services/data.service");
-var EventsComponent = (function () {
+var EventsComponent = /** @class */ (function () {
     function EventsComponent(_dataservice) {
         this._dataservice = _dataservice;
         this.counter = 0;
@@ -28,15 +29,15 @@ var EventsComponent = (function () {
             .subscribe(function (data) { return console.log(data); });
         // this.value = this._appService.getApp();
     };
+    EventsComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            templateUrl: './events.component.html',
+            providers: [data_service_1.DataService]
+        }),
+        __metadata("design:paramtypes", [data_service_1.DataService])
+    ], EventsComponent);
     return EventsComponent;
 }());
-EventsComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: './events.component.html',
-        providers: [data_service_1.DataService]
-    }),
-    __metadata("design:paramtypes", [data_service_1.DataService])
-], EventsComponent);
 exports.EventsComponent = EventsComponent;
 //# sourceMappingURL=events.component.js.map
