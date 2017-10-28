@@ -22,3 +22,6 @@ https://akveo.github.io/ng2-smart-table/#/
 @angular/material
 https://material.angular.io/
 https://alligator.io/angular/angular-material-2/
+
+@angular/flex-layout 
+https://github.com/angular/flex-layout

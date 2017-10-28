@@ -20,6 +20,7 @@ var mydatepicker_1 = require("mydatepicker");
 var ng2_smart_table_1 = require("ng2-smart-table");
 var animations_1 = require("@angular/platform-browser/animations");
 var material_module_1 = require("./material.module");
+var flex_layout_1 = require("@angular/flex-layout");
 // from my app
 var eventbooks_component_1 = require("./views/eventbooks.component");
 var groups_component_1 = require("./views/groups.component");
@@ -61,6 +62,7 @@ var AppModule = /** @class */ (function () {
                 ng2_smart_table_1.Ng2SmartTableModule,
                 animations_1.BrowserAnimationsModule,
                 animations_1.NoopAnimationsModule,
+                flex_layout_1.FlexLayoutModule,
                 material_module_1.MyOwnCustomMaterialModule
             ],
             declarations: [

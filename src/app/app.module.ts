@@ -21,6 +21,8 @@ import { NgClass } from '@angular/common';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MyOwnCustomMaterialModule } from './material.module'
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 // from my app
 import { EventbooksComponent } from './views/eventbooks.component';
 import { GroupsComponent } from './views/groups.component';
@@ -63,6 +65,7 @@ const appRoutes: Routes = [
 
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    FlexLayoutModule,
 
     MyOwnCustomMaterialModule
   ],
