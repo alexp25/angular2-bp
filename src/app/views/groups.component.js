@@ -44,6 +44,11 @@ var GroupsComponent = /** @class */ (function () {
             _this.groups = data;
             _this.loading = false;
         }); }, 1000);
+        this._dataservice.getData("/api/json")
+            .subscribe(function (data) {
+            // this.groupData = data;
+            console.log("json data received");
+        });
     };
     GroupsComponent = __decorate([
         core_1.Component({

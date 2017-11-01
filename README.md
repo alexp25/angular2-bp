@@ -11,6 +11,9 @@ npm start
 ide - visual studio code - plugins:
 npm install -g eslint
 
+tips:
+if there are problems running npm start, run npm update first
+
 3rd party libs:
 
 mydatepicker

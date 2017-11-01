@@ -38,6 +38,13 @@ var DataService = /** @class */ (function () {
             .do(function (data) { return console.log(data); })
             .catch(this.handleError);
     };
+    DataService.prototype.getData = function (url) {
+        // And in your service you should call map instead of subscribe so you return the data and not the HttpResult.
+        return this._http.get(url)
+            .map(function (data) { return data.json(); })
+            .do(function (data) { return console.log(data); })
+            .catch(this.handleError);
+    };
     DataService.prototype.handleError = function (error) {
         console.error(error);
         return Observable_1.Observable.throw(error.json().error());

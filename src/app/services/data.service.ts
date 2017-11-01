@@ -38,8 +38,16 @@ export class DataService {
             .catch(this.handleError);
     }
 
-    private handleError(error: Response) {
-        console.error(error);
-        return Observable.throw(error.json().error());
+    getData(url: string): Observable<any> {
+        // And in your service you should call map instead of subscribe so you return the data and not the HttpResult.
+        return this._http.get(url)
+            .map((data: Response) => data.json())
+            .do(data => console.log(data))
+            .catch(this.handleError);
     }
+
+    private handleError(error: Response) {
+    console.error(error);
+    return Observable.throw(error.json().error());
+}
 }

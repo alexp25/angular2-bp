@@ -32,9 +32,9 @@ export class GroupsComponent {
   showGroup(gname: string): void {
     console.log(gname);
     this._dataservice.getPeopleFromGroup(gname)
-    .subscribe(data => {
-      this.groupData = data;
-    });
+      .subscribe(data => {
+        this.groupData = data;
+      });
   }
 
 
@@ -46,6 +46,12 @@ export class GroupsComponent {
         this.groups = data;
         this.loading = false;
       }), 1000);
+
+    this._dataservice.getData("/api/json")
+      .subscribe(data => { 
+        // this.groupData = data;
+        console.log("json data received");
+      });
 
   }
 
